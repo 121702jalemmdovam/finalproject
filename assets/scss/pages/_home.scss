@@ -145,9 +145,98 @@
         background-position: 0% 0%;
     }
 }
+#dealbook {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+
+    .dealsbookleft {
+      width: 100%;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background-image:  url('/assets/image/h1-bg1.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50px;
+      background-attachment:fixed;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
+        top: 0;
+        left: 0;
+        z-index: 1;
+        animation: shadowMove 3s linear infinite;
+      }
+
+      @keyframes shadowMove {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    }
+
+    .dealsbookright {
+      width: 100%;
+      height: auto;
+     
+
+      .righttext {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 22px;
+        padding: 7px;
+       
+        img {
+          width: 160px;
+          height: auto;
+          border-radius: 10px;
+         
+
+        }
+        .txt{
+          padding: 10px;
+          margin-left: 20px;
+        }
+        h4{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
 
 
-  
+
   a,
   a:hover,
   a:focus,
