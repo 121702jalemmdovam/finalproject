@@ -4,3 +4,8 @@ $bookWidth: 200px;
 $bookHeight: 300px;
 $coverColor: #3498db;
 $backgroundColor: #ecf0f1;
+$darktan: #9A8548;
+$grad2: #373737;
+$grad1: darken($grad2, 2);
+$grad3: lighten($darktan, 4);
+$grad5: darken($darktan, 4);

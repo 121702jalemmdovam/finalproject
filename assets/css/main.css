@@ -321,7 +321,7 @@ header nav .sideright li a:hover {
   align-items: center;
 }
 #trend .container .trendheader h1 {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
   letter-spacing: -2px;
   line-height: 44px;
@@ -416,6 +416,14 @@ header nav .sideright li a:hover {
 }
 
 @media screen and (max-width: 400px) {
+  #trend .container .trendheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #trend .container .trendheader h1 {
+    font-size: 13px;
+  }
   #trend .container .trendheader .line {
     display: none;
   }
@@ -483,6 +491,106 @@ header nav .sideright li a:hover {
 
 @media screen and (max-width: 400px) {
   #genres .container .genresheader .line {
+    display: none;
+  }
+}
+#bookshelf .container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#bookshelf .container .bookshelfheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#bookshelf .container .bookshelfheader .line {
+  width: 30%;
+  height: 1px;
+  background-color: #dd5044;
+}
+#bookshelf .container .bookshelfheader h1 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 44px;
+  font-family: Sora;
+  text-transform: none;
+  text-decoration: none;
+}
+#bookshelf .bookshelf--frame {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#bookshelf .bookshelf--frame {
+  width: 90%;
+  background: tan;
+  background: url("https://static.tumblr.com/8x9m588/C8ho55ylx/bg-wood2.png"), linear-gradient(#323232, #373737 290px, #a8914e 290px, #a8914e 292px, #9A8548 292px, #9A8548 298px, #8c7942 298px, #8c7942 300px);
+  background-size: auto, 10px 300px;
+  border-left: 10px solid #9A8548;
+  border-right: 10px solid #9A8548;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+#bookshelf .bookshelf--frame:first-of-type {
+  border-top: 10px solid #9A8548;
+}
+#bookshelf .bookshelf--frame .book-wrapper {
+  width: auto;
+  display: inline-block;
+  width: 290px;
+  vertical-align: bottom;
+  height: 280px;
+  position: relative;
+  margin: 10px 0;
+  max-width: 100%;
+}
+#bookshelf .bookshelf--frame .book-wrapper img {
+  height: auto;
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 100%;
+  max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#bookshelf .bookshelf--frame .book-wrapper:hover img {
+  transform: translateX(-50%) rotate(20deg);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#bookshelf .bookshelf--frame .book-wrapper:active img {
+  transform: translateX(-50%) rotate(0deg);
+  box-shadow: none;
+}
+
+@media screen and (max-width: 1000px) {
+  #bookshelf .bookshelf--frame {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #bookshelf .bookshelf--frame .book-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #bookshelf .bookshelf--frame .book-wrapper img {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  #bookshelf .container .bookshelfheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #bookshelf .container .bookshelfheader .line {
     display: none;
   }
 }
@@ -715,4 +823,13 @@ section {
 }
 .footer .copyRightArea p {
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 600px) {
+  .footer .container .widget2 .media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
