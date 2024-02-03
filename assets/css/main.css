@@ -148,7 +148,7 @@ header nav .sideright li a:hover {
 }
 #dealbook .container .dealsbookleft {
   width: 100%;
-  height: 650px;
+  height: 670px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,6 +165,40 @@ header nav .sideright li a:hover {
   background-size: cover;
   border-radius: 50px;
   background-attachment: fixed;
+  transition: transform 0.3s ease;
+}
+#dealbook .container .dealsbookleft:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#dealbook .container .dealsbookleft .text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#dealbook .container .dealsbookleft .text span {
+  font-size: 13px;
+  font-family: Sora;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 20.568px;
+}
+#dealbook .container .dealsbookleft .text h2 {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-family: Sora;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: -1px;
+  list-style: 42.5px;
 }
 #dealbook .container .dealsbookleft img {
   max-width: 100%;
@@ -192,28 +226,327 @@ header nav .sideright li a:hover {
 #dealbook .container .dealsbookright {
   width: 100%;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #dealbook .container .dealsbookright .righttext {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 22px;
-  padding: 7px;
+  margin: 0;
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+#dealbook .container .dealsbookright .righttext:hover {
+  transform: scale(1.1);
 }
 #dealbook .container .dealsbookright .righttext img {
-  width: 160px;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 13px;
 }
 #dealbook .container .dealsbookright .righttext .txt {
+  width: 100%;
   padding: 10px;
   margin-left: 20px;
 }
-#dealbook .container .dealsbookright .righttext h4 {
+#dealbook .container .dealsbookright .righttext h5 {
   font-size: 18px;
+  font-weight: 700;
+  font-family: Sora;
+  line-height: 24px;
+  color: #000000;
+  letter-spacing: 0px;
+}
+#dealbook .container .dealsbookright .righttext h5:hover {
+  color: #F65D4E;
+  cursor: pointer;
+}
+#dealbook .container .dealsbookright .righttext i {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #FA8C17;
+}
+#dealbook .container .dealsbookright .righttext span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-family: Sora;
+  line-height: 12px;
+  text-transform: none;
+  text-decoration: none;
+  color: #999999;
+}
+#dealbook .container .dealsbookright .righttext span:hover {
+  color: #F65D4E;
+  cursor: pointer;
+}
+#dealbook .container .dealsbookright .righttext p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #F65D4E;
+  letter-spacing: 0;
+  font-family: Sora;
+  line-height: 28px;
 }
 
+@media screen and (max-width: 400px) {
+  #dealbook .container .dealsbookright .righttext {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+#trend {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#trend .container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#trend .container .trendheader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#trend .container .trendheader h1 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 44px;
+  font-family: Sora;
+  text-transform: none;
+  text-decoration: none;
+}
+#trend .container .trendheader .line {
+  height: 1px;
+  width: 75%;
+  background-color: #999999;
+}
+#trend .container .trenditem {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  margin: 5px;
+}
+#trend .container .trenditem:hover {
+  transform: scale(1.1);
+}
+#trend .container .trenditem img {
+  max-width: 100%;
+}
+#trend .container .trenditem .trendtext {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#trend .container .trenditem .trendtext h5 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Sora;
+  line-height: 24px;
+  color: #000000;
+  letter-spacing: 0px;
+}
+#trend .container .trenditem .trendtext h5:hover {
+  color: #F65D4E;
+  cursor: pointer;
+}
+#trend .container .trenditem .trendtext i {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #FA8C17;
+}
+#trend .container .trenditem .trendtext a {
+  margin-top: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-family: Sora;
+  line-height: 12px;
+  text-transform: none;
+  text-decoration: none;
+  color: #999999;
+}
+#trend .container .trenditem .trendtext a:hover {
+  color: #F65D4E;
+  cursor: pointer;
+}
+#trend .container .trenditem .trendtext span {
+  width: 100%;
+  margin-top: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Sora;
+  line-height: 23.996px;
+  letter-spacing: 0;
+  color: #444444;
+}
+#trend .container .trenditem .trendtext p {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #F65D4E;
+  letter-spacing: 0;
+  font-family: Sora;
+  line-height: 28px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  #trend .container .trendheader .line {
+    display: none;
+  }
+}
+#genres {
+  width: 100%;
+  height: auto;
+}
+#genres .container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#genres .container .genresheader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#genres .container .genresheader h1 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 44px;
+  font-family: Sora;
+  text-transform: none;
+  text-decoration: none;
+}
+#genres .container .genresheader .line {
+  height: 1px;
+  width: 75%;
+  background-color: #999999;
+}
+#genres .container .card {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  transition: transform 0.3s ease;
+}
+#genres .container .card:hover {
+  transform: scale(1.1);
+}
+#genres .container .card img {
+  width: 100%;
+  height: auto;
+  opacity: 9;
+}
+#genres .container .card .text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+#genres .container .card .text h2 {
+  font-size: 23px;
+  font-weight: 600;
+  font-family: Sora;
+  color: #ffffff;
+  text-transform: none;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 400px) {
+  #genres .container .genresheader .line {
+    display: none;
+  }
+}
+#total {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#total .container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#total .container .totalitem {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0177b5;
+  padding: 40px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 5px;
+}
+#total .container .totalitem:hover {
+  transform: scale(1.1);
+}
+#total .container .totalitem #icon {
+  background-color: #E9F9FD;
+  padding: 30px;
+  border-radius: 50%;
+}
+#total .container .totalitem #icon i {
+  font-size: 30px;
+}
+#total .container .totalitem .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+#total .container .totalitem .text h4 {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+#total .container .totalitem .text span {
+  font-size: 11px;
+  color: #999999;
+  letter-spacing: 0;
+}
+
+@media screen and (max-width: 400px) {
+  #total .container .totalitem {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
 a,
 a:hover,
 a:focus,
