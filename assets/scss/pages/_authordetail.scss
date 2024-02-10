@@ -48,7 +48,6 @@ header{
             &:hover{
               color:#F65D4E !important ;
               transition: 1s;
-              background-color: #F65D4E;
             }
           }
         }
@@ -57,50 +56,67 @@ header{
     }
   }
 
-#authordetail{
+  #authordetail {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px;
-    .container{
-        margin-top: 20px;
-        margin-bottom: 20px;
-      .authordetailheader{
+    
+    .container {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+      .authordetailheader {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 20px;
         margin-bottom: 20px;
-        h1{
-            font-size: 40px;
-            font-family: Sora;
-            font-weight: 700;
+        
+        h1 {
+          font-size: 40px;
+          font-family: Sora;
+          font-weight: 700;
+          animation: fadeInUp 1s ease; // Ek animasyon
         }
-      }  
-      #authorprodetail{
+      }
+      
+      #authorprodetail {
         width: 100%;
         height: auto;
         margin-top: 20px;
         margin-bottom: 20px;
-        .boxDiv{
-          display: flex;  
+        
+        .boxDiv {
+          display: flex;
           justify-content: center;
           border-radius: 80px 0 80px 0;
+          padding: 20px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
           box-shadow: rgba(223, 61, 61, 0.56) 0px 50px 100px -20px, rgba(223, 61, 61, 0.56) 0px 30px 60px -30px, rgba(223, 61, 61, 0.56) 0px -2px 6px 0px inset;
-          .images{
+          animation: slideInBottom 1s ease; // Ek animasyon
+          
+          .images {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px;
-            img{
-                max-width: 100%;
-                height: auto;
-                border-radius: 40px 0 40px 0;
+            padding: 20px;
+            margin-top: 20px;
+            
+            img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 25px;
+              animation: fadeIn 1s ease; // Ek animasyon
             }
           }
-          .textDiv{
+          
+          .textDiv {
+            width: 100%;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -108,24 +124,289 @@ header{
             padding: 20px;
             margin-top: 20px;
             margin-bottom: 20px;
-            h5{
-                font-size: 25px;
-                font-family: Sora;
+            animation: slideInLeft 1s ease; // Ek animasyon
+            
+            h5 {
+              font-size: 25px;
+              font-family: Sora;
+              font-weight: 600;
+              font-style: italic;
+              color: #999999;
+
+
+              strong {
+                color: rgba(200, 12, 12, 0.56);
+              }
+            }
+            
+            .title {
+              font-size: 20px;
+              font-family: Sora;
+              font-style: italic;
+              font-weight: 700;
+              color: #999999;
+              
+              strong {
+                color: rgba(200, 12, 12, 0.56);
+              }
+            }
+            
+            .description {
+              font-size: 17px;
+              font-family: Sora;
+              font-style: italic;
+              font-weight: 600;
+              color: #999999;
+              
+              strong {
+                font-size: 19px;
+                color: rgba(200, 12, 12, 0.56);
+              }
+            }
+            
+            a {
+              button {
+                border: none;
+                color: rgba(223, 61, 61, 0.56);
                 font-weight: 700;
-        
+                font-style: italic;
+                padding: 5px;
+                border: none;
+                background-color: transparent;
+                
+                &:hover {
+                  color: rgba(150, 8, 8, 0.56);
+                  animation: shake 0.5s; // Ek animasyon
+                }
+                
+                i {
+                  font-size: 15px;
+                }
+              }
             }
-            .title{
-                font-size: 20px;
-                font-family: Sora;
-
-            }
-
           }
+        
+         
         }
       }
     }
+  }
+  
+  // Animasyonlar
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInBottom {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+//   background: linear-gradient(45deg, #b83f4f, #aa4853, #ce9098);
+        //   background-size: 200% 200%;
+        //   animation: wave 3s ease infinite;
+// @keyframes wave {
+//     0% {
+//       background-position: 0% 50%;
+//     }
+//     50% {
+//       background-position: 100% 50%;
+//     }
+//     100% {
+//       background-position: 0% 50%;
+//     }
+//   }
+
+#authorsdetails{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    .container{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      .authorsdetailsheader{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        h1{
+            font-size: 30px;
+            font-weight: 700;
+            font-family: Sora;
+            letter-spacing: 0;
+          }
+      }
+      
+   #authorsdetailsitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .proDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: rgba(226, 102, 102, 0.56) 0px 22px 70px 4px;
+        background-color: #f0f0f0;
+        cursor: pointer; 
+        &:hover {
+          animation: shake 0.8s ease infinite; 
+      }
+        @mixin random-dots($count, $size, $color) {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                top: random(100%) * 1%;
+                left: random(100%) * 1%;
+                width: $size;
+                height: $size;
+                border-radius: 50%;
+                background-color: $color;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &::after {
+            @include random-dots(20, 3px, rgba(12, 12, 12, 0.1)); 
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .textDiv {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            h5{
+              font-family: Sora;
+              font-weight: 700;
+              font-style: italic;
+              font-size: 20px;
+            }
+            p{
+              font-size: 15px;
+              font-style: italic;
+              color: #484646;
+            }
+          
+        }
+        a{
+          button{
+              border: none;
+              color:rgba(223, 61, 61, 0.56) ;
+              font-weight: 700;
+              font-style: italic;
+              padding: 5px;
+              border: none;
+              &:hover{
+                color:rgba(150, 8, 8, 0.56) ;
+              }
+              i{
+                font-size: 15px;
+              }
+          }
+        }
+    }
+}
+.btnn{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    #pagi{
+        width: 160px;
+        height: 50px;
+        border: none;
+        background-color: transparent;
+
+        color:rgba(200, 12, 12, 0.56); 
+        font-weight: 700;
+        font-style: italic;
+        border-radius:20px;
+        &:hover{
+            color:rgba(200, 12, 12, 0.56);
+            animation: shake 0.5s; 
+            border: none;
+        }
+    }
+  }
 }
 
+}
+@keyframes shake {
+  0% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  100% { transform: translateX(-2px); }
+}
+
+      
   a,
   a:hover,
   a:focus,
