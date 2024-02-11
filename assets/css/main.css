@@ -3680,8 +3680,8 @@ header nav .sideright li a:hover {
 #allauthors #author .proDiv::after:before {
   content: "";
   position: absolute;
-  top: 84%;
-  left: 81%;
+  top: 97%;
+  left: 54%;
   width: 3px;
   height: 3px;
   border-radius: 50%;
@@ -4188,8 +4188,8 @@ header nav .sideright li a:hover {
 #authorsdetails .container #authorsdetailsitem .proDiv::after:before {
   content: "";
   position: absolute;
-  top: 29%;
-  left: 5%;
+  top: 41%;
+  left: 74%;
   width: 3px;
   height: 3px;
   border-radius: 50%;
@@ -4451,7 +4451,8 @@ section {
 
 header {
   width: 100%;
-  padding: 20px;
+  padding: 30px;
+  background-color: #A36B2B;
 }
 header nav {
   width: 90%;
@@ -4586,14 +4587,347 @@ header nav .sideright li a:hover {
     transform: translateY(-20px);
   }
 }
+#blogtext {
+  animation: animateBackground 20s linear infinite;
+}
+#blogtext .container-fluid .blogtextheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#blogtext .container-fluid .blogtextheader h1 {
+  font-family: Open Sans;
+  color: #a36b2b;
+  font-weight: 700;
+}
+#blogtext .container-fluid #blog {
+  width: 100%;
+  height: auto;
+}
+#blogtext .container-fluid #blog .boxDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1F1B16;
+  padding: 7px;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  background-color: #68735D;
+  border-radius: 15px;
+  box-shadow: #68735D 0px 1px 0px, #68735D 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv img {
+  width: 330px;
+  height: 310px;
+  border-radius: 15px;
+  box-shadow: #4b2a03 0px 2px 4px 0px, #4b2a03 0px 2px 16px 0px;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv .textDiv {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv .textDiv h4 {
+  font-size: 17px;
+  font-family: Open Sans;
+  font-weight: 700;
+  color: #4b2a03;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv .textDiv p {
+  font-size: 15px;
+  font-family: Open Sans;
+  color: rgb(210, 207, 207);
+  font-weight: 700;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv button {
+  border: none;
+  background-color: transparent;
+  font-family: Open Sans;
+  font-weight: 700;
+  color: #4A2E0F;
+}
+#blogtext .container-fluid #blog .boxDiv .proDiv button:hover {
+  color: #000000;
+  animation: shake 0.5s;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#blogtexttwo {
+  animation: animateBackground 20s linear infinite;
+}
+#blogtexttwo .container-fluid .blogtexttwoheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#blogtexttwo .container-fluid .blogtexttwoheader h1 {
+  font-family: Open Sans;
+  color: #a36b2b;
+  font-weight: 700;
+}
+#blogtexttwo .container-fluid #blogtwo {
+  width: 100%;
+  height: auto;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1F1B16;
+  padding: 7px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  background-color: #68735D;
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv img {
+  width: 330px;
+  height: 310px;
+  border-radius: 15px;
+  box-shadow: #4b2a03 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv .textDiv {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv .textDiv h4 {
+  font-size: 17px;
+  font-family: Open Sans;
+  font-weight: 700;
+  color: #4b2a03;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv .textDiv p {
+  font-size: 15px;
+  font-family: Open Sans;
+  color: rgb(210, 207, 207);
+  font-weight: 700;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv button {
+  border: none;
+  background-color: transparent;
+  font-family: Open Sans;
+  font-weight: 700;
+  color: #4A2E0F;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv button:hover {
+  color: #000000;
+  animation: shake 0.5s;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#blogtexttwo {
+  animation: animateBackground 20s linear infinite;
+}
+#blogtexttwo .container-fluid .blogtextheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#blogtexttwo .container-fluid .blogtextheader h1 {
+  font-family: Open Sans;
+  color: #a36b2b;
+  font-weight: 700;
+}
+#blogtexttwo .container-fluid #blogtwo {
+  width: 100%;
+  height: auto;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #68735D;
+  padding: 7px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: #1F1B16;
+  box-shadow: #4b2a03 0px 1px 0px, #4b2a03 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv img {
+  width: 350px;
+  height: 310px;
+  border-radius: 15px;
+  box-shadow: #4b2a03 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv .textDiv {
+  width: 350px;
+  height: 90px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: #4b2a03 0px 2px 4px 0px, #4b2a03 0px 2px 16px 0px;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv .textDiv h4 {
+  font-size: 17px;
+  font-family: Open Sans;
+  font-weight: 700;
+  color: #68735D;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv .textDiv p {
+  font-size: 15px;
+  font-family: Open Sans;
+  color: rgb(210, 207, 207);
+  font-weight: 700;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv button {
+  border: none;
+  background-color: transparent;
+  font-family: Open Sans;
+  font-weight: 700;
+  color: #9da297;
+}
+#blogtexttwo .container-fluid #blogtwo .boxDiv .proDiv button:hover {
+  color: #c6c1c1;
+  animation: shake 0.5s;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 #blogfoot {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://cdn.pixabay.com/photo/2016/11/20/09/08/books-1842306_1280.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 #blogfoot .container-fluid {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+#blogfoot .container-fluid .blogfootheader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#blogfoot .container-fluid .blogfootheader h1 {
+  font-family: Open Sans;
+  color: #a36b2b;
+  font-weight: 700;
 }
 #blogfoot .container-fluid .blogfootitem {
   width: 100%;
