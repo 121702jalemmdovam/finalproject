@@ -3680,8 +3680,8 @@ header nav .sideright li a:hover {
 #allauthors #author .proDiv::after:before {
   content: "";
   position: absolute;
-  top: 97%;
-  left: 54%;
+  top: 61%;
+  left: 77%;
   width: 3px;
   height: 3px;
   border-radius: 50%;
@@ -4188,8 +4188,8 @@ header nav .sideright li a:hover {
 #authorsdetails .container #authorsdetailsitem .proDiv::after:before {
   content: "";
   position: absolute;
-  top: 41%;
-  left: 74%;
+  top: 13%;
+  left: 98%;
   width: 3px;
   height: 3px;
   border-radius: 50%;
@@ -5191,6 +5191,76 @@ header nav .sideright li a:hover {
   transition: 1s;
 }
 
+#blogdetal {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #68735D;
+  background: linear-gradient(to right, #8B4513, #A0522D, #CD853F, #A0522D, #8B4513);
+  background-size: 500% 100%;
+  animation: gradientAnimation 10s ease infinite;
+}
+#blogdetal .container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#blogdetal .container #blogdetails {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+  padding: 20px;
+  box-shadow: #A36B2B 0px 54px 55px, #A36B2B 0px -12px 30px, #A36B2B 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#blogdetal .container #blogdetails img {
+  width: 600px;
+}
+#blogdetal .container #problog {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #A36B2B;
+}
+#blogdetal .container #problog .boxDiv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+#blogdetal .container #problog .boxDiv .proDiv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#blogdetal .container #problog .boxDiv .proDiv img {
+  width: 70% px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 a,
 a:hover,
 a:focus,
