@@ -74,30 +74,59 @@
           </nav>
     </header>
     <main>
+        <section id="myblog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="myblogitem">
+                            <h1>WELCOME!</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
         <section id="blogdetal">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8">
+                        <div class="row">
                         <div class="col-xl-12">
-                            <div class="texthead">
-                             <h1>The Literature Corner</h1>
+                        <div id="blogdetails">
+                        </div>
+                        </div>
+                        <div class="row profiles">
+                            <div class="col-xl-4">
+                                <div class="profile">
+                                    <img src="https://www.edebiyyatveincesenet.az/media/k2/items/cache/d4d0bab07e79c84abc431ef1944b2e3c_L.jpg" alt="jale islam">
+                                </div>
+                            </div>
+                            <div class="col-xl-8">
+                                  <div class="profiledetail">
+                                    <h3>JALE İSLAM</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
+                                </div>
+                            </div>
+                              
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="message">
+                                <h1>POST A COMMENT</h1>
+                                <div id="chat-window"></div>
+                                <input type="text" id="name" placeholder="Your name"><br>
+                                <input type="text" id="email" placeholder="Your email"><br> <!-- Email inputu eklendi -->
+                                <textarea id="message" placeholder="Your comment..."></textarea><br> <!-- Textarea eklendi -->
+                                <button id="send" onclick="sendMessage()">Send</button>
                             </div>
                         </div>
-                        <div id="blogdetails">
-        
-                        </div>
-                        <div class="col-xl-12">
-                           <div class="message">
-                            <div id="chat-window"></div>
-                            <input type="text" id="name" placeholder="Enter your name..."><br>
-                            <input type="text" id="book" placeholder="Which blog post is your comment about?"> <br>
-                            <input type="text" id="message" placeholder="Comment..."> <br>
-                            <button onclick="sendMessage()">Send</button>
-
-                           </div>
-                        </div>
+                       
                     </div>
+                </div>
                     <div class="col-xl-4">
+                        <div style="display: flex;padding: 10px;  justify-content: center;align-items: center; font-family: Marcellus;" class="txt">
+                            <h1 style="font-size: 30px;font-weight: 600; color:#5D352B ; font-style: italic;">Today's Blog Posts <i class="fa-solid fa-pencil"></i></h1>
+
+                        </div>
                         <div id="problog"></div>
                     </div>
                     </div>

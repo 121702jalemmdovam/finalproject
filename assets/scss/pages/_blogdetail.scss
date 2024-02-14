@@ -55,30 +55,369 @@ header{
       }
     }
   }
+ #myblog{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.pexels.com/photos/877971/pexels-photo-877971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    .container{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .myblogitem{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            h1{
+                font-family: Marcellus;
+                color: #fff;
+                font-weight: 700;
+            } 
+        }
+    }
+ }
   #blogdetal{
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
-    background-color: #68735D;
-    background: linear-gradient(to right, $color1, $color2, $color3, $color2, $color1);
-    background-size: 500% 100%;
+    box-shadow: #5D352B 0px -23px 25px 0px inset, #5D352B 0px -36px 30px 0px inset, #5D352B 0px -79px 40px 0px inset, #5D352B 0px 2px 1px, #5D352B 0px 4px 2px, #5D352B 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    background-color: rgba(255, 255, 255, 0.8); /* Parlak beyaz, %80 opaklık */
     animation: gradientAnimation 10s ease infinite;
     .container{
         margin-top: 20px;
         margin-bottom: 20px;
+        
+        .message{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            flex-direction: column;
+            #chat-window{
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                
+            }
+             .comment{
+                width: 100%;
+                height: auto;
+                justify-content: center;
+                padding: 10px;
+                .one{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    strong{
+                        font-size: 25px;
+                        font-family: Marcellus;
+                        font-style: italic;
+                        color: #5D352B;
+                    }
+                    span{
+                        font-size: 19px;
+                        font-weight: 400;
+                        font-family: Marcellus;
+
+                    }
+                    p{
+                        font-size: 19px;
+                        font-family: Marcellus;
+                        font-style: italic;
+                        border: 1px solid #5D352B;
+                        padding: 20px;
+                        border-radius: 10px;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+
+
+                    }
+                }
+                .three{
+                    width: 250px;
+                    height:auto ;
+                    display: flex;
+                    justify-content: space-between;
+                    button{
+                        margin-left: 5px;
+                        border: none;
+                        background-color: transparent;
+                        font-style: italic;
+                        font-weight: 500;
+                    }
+                   
+                }
+                .two{
+                    width: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px;
+                    .likes{
+                        border: none;
+                        background-color: transparent;
+                        font-style: italic;
+                        &:hover{
+                        color: #dd5044;
+                        }
+                    }
+                    .like{
+                        margin-top: 15px;
+                        font-style: italic;
+                    }
+                }
+               
+             }
+             .reply{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px;
+                .one{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    strong{
+                        font-size: 25px;
+                        font-family: Marcellus;
+                        font-style: italic;
+                        color: #5D352B;
+                    }
+                    span{
+                        font-size: 19px;
+                        font-weight: 400;
+                        font-family: Marcellus;
+
+                    }
+                    p{
+                        font-size: 19px;
+                        font-family: Marcellus;
+                        font-style: italic;
+                        border: 1px solid #5D352B;
+                        padding: 20px;
+                        border-radius: 10px;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+
+
+                    }
+                }
+                .threee{
+                    width: 250px;
+                    height:auto ;
+                    display: flex;
+                    justify-content: space-between;
+                    button{
+                        margin-left: 5px;
+                        border: none;
+                        background-color: transparent;
+                        font-style: italic;
+                        font-weight: 500;
+                    }
+                   
+                }
+                .twoo{
+                    width: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px;
+                    .liked{
+                        border: none;
+                        background-color: transparent;
+                        font-style: italic;
+                        &:hover{
+                        color: #dd5044;
+                        }
+                    }
+                    .likedd{
+                        font-style: italic;
+                    }
+                }
+               
+            }
+            h1{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                font-size: 30px;
+                font-family: Marcellus;
+                color: #5D352B;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 700;
+            }
+            #name,#email{
+                margin-top:5px;
+                margin-bottom: 5px;
+                width: 100%;
+                height: 60px;
+                padding: 5px;
+                border: 1px solid #CCCCCC;
+            }
+            #message{
+                width: 100%;
+                height: 180px;
+                padding: 10px;
+                border: 1px solid #CCCCCC;
+
+            }
+            #send{
+                width: 180px;
+                height: 60px;
+                background-color: #5D352B;
+                color: #fff;
+                font-weight: 600;
+                font-family: Marcellus;
+                font-size: 20px;
+                border: none;
+                transition: 1s;
+                margin-top: 20px;
+                &:hover{
+                    transition: 1s;
+                    background-color: #000000;
+                }
+            }
+        }
+        .profiles{
+            width: 100%;
+            margin: 20px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            padding: 10px;
+            border:  1px solid #5D352B;
+            box-shadow: #5D352B 0px 30px 90px;               
+
+        
+        .profile{
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+                     
+
+            img{
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+            }
+          
+        }
+        .profiledetail{
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            padding: 15px;
+            h3{
+                font-size: 25px;
+                font-family:Marcellus ;
+                font-weight: 600;
+                color:#5D352B  ;
+                font-style: italic;
+            }
+            p{
+                font-size: 19px;
+                font-family:Marcellus ;
+                font-style: italic;
+
+            }
+           } 
+    }
        #blogdetails{
        display: flex;
        justify-content: center;
        flex-direction: column;
        text-align: justify;
        padding: 20px;
-       box-shadow: #A36B2B 0px 54px 55px, #A36B2B 0px -12px 30px, #A36B2B 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      
-      img{
-        width: 600px;
+       margin-top: 20px;
+        margin-bottom: 20px;
+
+        .boxDiv{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            .images{
+                width: 100%;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                img{
+                    max-width: 100%;
+                    height: auto;
+                   }
+            }
+            .textDiv{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 100%;
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                h5{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    font-size: 25px;
+                    font-family: Marcellus;
+                    letter-spacing: 0;
+                    font-weight: 600;
+                }
+                .title{
+                    font-size: 20px;
+                    font-weight: 600;
+                    font-family: Marcellus;
+                    color: #ae8760;
+                    font-style: italic;
+                }
+                .description{
+                    font-size: 21px;
+                    font-weight: 300;
+                    font-family: Marcellus;
+                    font-style: italic;
+
+                }
+                a{
+                    button{
+                        border: none;
+                        background-color: transparent;
+                        color: #5D352B;
+                        font-weight: 600;
+                        font-style: italic;
+                        &:hover{
+                            color: #000000;
+                            animation: shake 0.5s; // Ek animasyon
+                        }
+                    }
+                }
+               
+            }
+            
+              
+            
+        }
+       
        }
-       }
+       
        #problog{
         width: 100%;
         height: auto;
@@ -87,9 +426,8 @@ header{
         align-items: center;
         padding: 20px;
         flex-direction: column;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-        background-color: #A36B2B;
-
+        margin-top: 20px;
+        margin-bottom: 20px;
         .boxDiv{
             width: 100%;
             height: auto;
@@ -97,22 +435,77 @@ header{
             justify-content: center;
             flex-direction: column;
             text-align: justify;
-            margin: 10px;
+            margin: 20px;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-            .proDiv{
+            background-color: #5D352B;
+            border-radius: 10px;
+            box-shadow: #5D352B 0px 30px 90px;               
+              .proDiv{
                 width: 100%;
                 height: auto;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 img{
-                    width: 70%px;
+                border-radius: 10px;
+                max-width: 100%;
+                }
+                .textDiv{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    h5{
+                        font-size: 20px;
+                        font-family: Marcellus;
+                        letter-spacing: 0;
+                        font-weight: 600;
+                        color: #cbc6c6;
+                        font-style: italic;
+                    }
+                    p{
+                        font-size: 16px;
+                        font-family: Marcellus;
+                        font-weight: 600;
+                        color: #fafafa;
+                        font-style: italic;
+                    }
+                   
+                }
+                .btnDiv{
+                    a{
+                        button{
+                            border: none;
+                            background-color: transparent;
+                            color: #cbc6c6;
+                            font-weight: 600;
+                            font-style: italic;
+                            &:hover{
+                                color: #000000;
+                                animation: shake 0.5s; // Ek animasyon
+                            }
+                        }
+                    }
+                   
                 }
             }
         }
        }
+    }
+  }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
     }
   }
   @keyframes gradientAnimation {

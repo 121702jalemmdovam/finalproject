@@ -15,7 +15,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul  class="navbar-nav ">
                 <li class="nav-item dropdown">
@@ -76,33 +75,93 @@
     <main>
         <section id="prodactsAdd">
             <div class="container">
-                <div style="width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
-                    <input style="width: 20%; height: 40px; " type="text" name="" id="inp" placeholder="Search By Name">
-                    <button style="margin-right: 20px; background-color: #007A5C; color: white; border: none; width: 80px; height: 40px;"  id="searc">SEARCH</button>
-                    <div class="dropdown show">
-                        <a style="background-color: #007A5C; border: none; min-height: 40px;" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Sort
-                        </a>
-                      
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <button style=" background-color: #007A5C; color: white; border: none; width: 80px; height: 40px;margin-top: 10px; border-radius: 10px;" id="btnAZ" class="btnazza">A-Z</button>
-                            <button style="background-color: #007A5C; color: white; border: none; width: 80px; height: 40px;margin-top: 10px; border-radius: 10px;" id="btnZA" class="btnazza">Z-A</button>
-                            <button style="background-color: #007A5C; color: white; border: none; width: 80px; height: 40px;margin-top: 10px; border-radius: 10px;" id="default">Default</button>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="tableheader">
+                            <form id="searchdata">
+                            <input type="text" id="inp" placeholder="Search By Name">
+                            <button id="searc">SEARCH</button>
+                        </form>
                         </div>
                     </div>
-                    
+                    <div class="col-xl-6">
+                        <div class="tableheader">
+                            <div class="dropdown show">
+                                <a  class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Sort
+                                </a>
+        
+                                <div class="dropdown-menu dropt" aria-labelledby="dropdownMenuLink">
+                                    <button  id="btnAZ" class="btnazza"><i class="fa-solid fa-arrow-up-z-a"></i></button> <br>
+                                    <button  id="btnZA" class="btnazza"><i class="fa-solid fa-arrow-up-a-z"></i></button> <br>
+                                    <button  id="default"><i class="fa-solid fa-rotate-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
                 </div>
-                <form id="Myform">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Name</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" required>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="tablediv">
+                            <img src="https://wordsrated.com/wp-content/uploads/2023/01/Global-book-sales-by-format-1024x683.png" alt="statistic">
+                        </div>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                    <div class="col-xl-6">
+                        <div class="tablediv">
+                            <form id="Myform">
+                                    <input style="width: 100%; height: 40px; padding: 10px; border-radius: 5px; border: 1px solid #999999; "  type="text" id="exampleName" placeholder="Name" required><br>
+                                    <input style="width: 100%; height: 40px; padding: 10px; border-radius: 5px; border: 1px solid #999999;"  type="text" id="exampleTitle" placeholder="Title" required><br>
+                                    <input style="width: 100%; height: 40px; padding: 10px; border-radius: 5px; border: 1px solid #999999;"  type="number" id="examplePrice" placeholder="Price" required><br>
+                                    <input style="width: 100%; height: 40px; padding: 10px; border-radius: 5px; border: 1px solid #999999;"  type="text" id="exampleImage" placeholder="Image" required><br>
+                                <button style="width: 100%; height: 50px; padding: 10px; border-radius: 5px; border: none; background-color: #B14D3F; color: #fff; font-size: 20px; font-family: Mandellas; font-weight: 600; "  type="submit">Submit</button>
+                            </form>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3">
+                      <div class="totalitem">
+                       <span id="icon"><i style="color: #4938a7;" class="fa-solid fa-book"></i></span>
+                       <div class="text">
+                        <h4>15,254</h4>
+                        <span>TOTAL BOOKS</span>
+                       </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3">
+                       <div class="totalitem">
+                        <span id="icon"><i style="color: #2b7f92;" class="fa-solid fa-users"></i></span>
+                        <div class="text">
+                          <h4>1,287</h4>
+                          <span>AUTHORS</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3">
+                      <div class="totalitem">
+                        <span id="icon"><i style="color: #64b53c;" class="fa-solid fa-cart-shopping"></i></span>
+                         <div class="text">
+                          <h4>7,589</h4>
+                         <span>BOOKS SOLD</span>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3">
+                      <div class="totalitem">
+                        <span id="icon"><i style="color: #cd6f0b;" class="fa-regular fa-face-smile"></i></span>
+                         <div class="text">
+                          <h4>97%</h4>
+                          <span>HAPPY CUSTOMER</span>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+               
+            </div>
+        </section>
+        <section id="tablepro" style="background-color: #c76a5e;">
+            <div class="container">
                 <table id="tttt">
                     <thead>
                         <th>Product image</th>
@@ -111,12 +170,13 @@
                         <th>Remove</th>
                     </thead>
                     <tbody id="tableDiv">
-                      
+        
                     </tbody>
                 </table>
-
+        
             </div>
         </section>
+        
     </main>
     <footer class="footer">
         <div class="container">

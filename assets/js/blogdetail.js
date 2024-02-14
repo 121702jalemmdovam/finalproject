@@ -6,9 +6,9 @@ function getblogs(){
         const box= document.createElement('div')
         box.className='boxDiv row';
         box.innerHTML=`
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="images">
-        <img src="${item.image}" alt="">
+        <img style="width: 800px;" src="${item.image}" alt="">
          </div>
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -66,10 +66,9 @@ function blogdetail(id) {
 }
 
 
-
 const chatWindow = document.getElementById('chat-window');
 const nameInput = document.getElementById('name');
-const bookInput = document.getElementById('book');
+const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 let comments = [];
 
@@ -90,14 +89,16 @@ function generateUniqueId() {
 
 function sendMessage() {
     const name = nameInput.value.trim();
-    const book = bookInput.value.trim();
+    const email = emailInput.value.trim();
     const message = messageInput.value.trim();
-    if (name !== '' && book !== '' && message !== '') {
+    if (name !== '' && email !== '' && message !== '') {
+        const currentDate = new Date().toLocaleDateString();
         const comment = { 
             id: generateUniqueId(), 
             name, 
-            book, 
-            message, 
+            email,
+            message,
+            date: currentDate,
             likes: 0, 
             likedBy: [],
             replies: [] 
@@ -106,7 +107,7 @@ function sendMessage() {
         saveComments();
         displayComments();
         nameInput.value = '';
-        bookInput.value = '';
+        emailInput.value = '';
         messageInput.value = '';
     }
 }
@@ -115,53 +116,64 @@ function displayComments() {
     chatWindow.innerHTML = '';
     comments.forEach((comment, commentIndex) => {
         const commentElement = document.createElement('div');
+        commentElement.className='comment'
         commentElement.innerHTML = `
-            <strong>${comment.name}</strong> kitap <strong>${comment.book}</strong> hakkında şunu yazdı: <br>
-            <span id="comment-${comment.id}-text">${comment.message}</span><br>
-            <button onclick="likeComment(${commentIndex})">Beğen</button> <span id="comment-${comment.id}-likes">${comment.likes}</span><br>
-            <button onclick="editComment(${commentIndex})">Yorumu Düzenle</button><br>
-            <button onclick="deleteComment(${commentIndex})">Yorumu Sil</button><br>
-            <button onclick="replyToComment(${commentIndex})">Yanıtla</button>
+            <div class="one">
+            <strong>${comment.name}</strong> 
+            <span>${comment.date}<span>
+            <p>${comment.message}</p>
+            </div>
+            <div class="three">
+            <div class="two">
+            <button class="likes" onclick="likeComment(${commentIndex})"><i class="fa-regular fa-heart"></i></button> 
+            <p class="like">${comment.likes}</p>
+            </div>
+            <button class="edit" onclick="editComment(${commentIndex})">Edit</button>
+            <button onclick="deleteComment(${commentIndex})">Delete</button> <br>
+            <button onclick="replyToComment(${commentIndex})">Reply</button>
+            </div>
+            <div  id="replies-${comment.id}"></div>
         `;
         chatWindow.appendChild(commentElement);
 
         comment.replies.forEach((reply, replyIndex) => {
             const replyElement = document.createElement('div');
+            replyElement.className='reply'
             replyElement.innerHTML = `
-                <em>${reply.name}</em>: <span id="reply-${reply.id}-text">${reply.message}</span><br>
-                <button onclick="likeReply(${commentIndex}, ${replyIndex})">Beğen</button> <span id="reply-${reply.id}-likes">${reply.likes}</span><br>
-                <button onclick="editReply(${commentIndex}, ${replyIndex})">Yanıtı Düzenle</button>
-                <button onclick="deleteReply(${commentIndex}, ${replyIndex})">Yanıtı Sil</button>
-                <button onclick="replyToReply(${commentIndex}, ${replyIndex})">Yanıtı Yanıtla</button>
-            `;
-            commentElement.appendChild(replyElement);
+                <div class="one">
+                <strong>${reply.name}</strong> 
+                <span>${reply.date}</span>
+                <p>${reply.message}</p>
+                </div>
+                <div class="threee">
+                <div class="twoo"
+                <button style="margin-top:40px;" class="liked" onclick="likeReply(${commentIndex}, ${replyIndex})"><i class="fa-regular fa-heart"></i></button>
+                <p  class="likedd">${reply.likes}</p>
+                </div>
+                <button onclick="editReply(${commentIndex}, ${replyIndex})">Edit</button><br>
+                <button onclick="deleteReply(${commentIndex}, ${replyIndex})">Delete</button><br>
+                <button onclick="replyToReply(${commentIndex}, ${replyIndex})">Reply</button>
+                </div>
+                `;
+            document.getElementById(`replies-${comment.id}`).appendChild(replyElement);
         });
     });
-    chatWindow.scrollTop = chatWindow.scrollHeight; 
 }
 
 function likeComment(commentIndex) {
-    const comment = comments[commentIndex];
-    if (!comment.likedBy.includes("You")) {
-        comment.likes++;
-        comment.likedBy.push("You");
-        saveComments();
-        displayComments();
-    }
+    comments[commentIndex].likes++;
+    saveComments();
+    displayComments();
 }
 
 function likeReply(commentIndex, replyIndex) {
-    const reply = comments[commentIndex].replies[replyIndex];
-    if (!reply.likedBy.includes("You")) {
-        reply.likes++;
-        reply.likedBy.push("You");
-        saveComments();
-        displayComments();
-    }
+    comments[commentIndex].replies[replyIndex].likes++;
+    saveComments();
+    displayComments();
 }
 
 function editComment(commentIndex) {
-    const newText = prompt('Yorumunuzu düzenleyin:', comments[commentIndex].message);
+    const newText = prompt('Edit your comment:', comments[commentIndex].message);
     if (newText !== null) {
         comments[commentIndex].message = newText;
         saveComments();
@@ -170,7 +182,7 @@ function editComment(commentIndex) {
 }
 
 function editReply(commentIndex, replyIndex) {
-    const newText = prompt('Yanıtınızı düzenleyin:', comments[commentIndex].replies[replyIndex].message);
+    const newText = prompt('Edit your reply:', comments[commentIndex].replies[replyIndex].message);
     if (newText !== null) {
         comments[commentIndex].replies[replyIndex].message = newText;
         saveComments();
@@ -178,30 +190,8 @@ function editReply(commentIndex, replyIndex) {
     }
 }
 
-function replyToComment(commentIndex) {
-    const name = prompt('Adınızı girin:');
-    const reply = prompt('Yanıtınızı girin:');
-    if (name && reply) {
-        const newReply = { name, message: reply, id: generateUniqueId(), likes: 0, likedBy: [], replies: [] };
-        comments[commentIndex].replies.push(newReply);
-        saveComments();
-        displayComments();
-    }
-}
-
-function replyToReply(commentIndex, replyIndex) {
-    const name = prompt('Adınızı girin:');
-    const reply = prompt('Yanıtınızı girin:');
-    if (name && reply) {
-        const newReply = { name, message: reply, id: generateUniqueId(), likes: 0, likedBy: [] };
-        comments[commentIndex].replies[replyIndex].replies.push(newReply);
-        saveComments();
-        displayComments();
-    }
-}
-
 function deleteComment(commentIndex) {
-    if (confirm("Yorumu silmek istediğinize emin misiniz?")) {
+    if (confirm("Are you sure you want to delete this comment?")) {
         comments.splice(commentIndex, 1);
         saveComments();
         displayComments();
@@ -209,8 +199,43 @@ function deleteComment(commentIndex) {
 }
 
 function deleteReply(commentIndex, replyIndex) {
-    if (confirm("Yanıtı silmek istediğinize emin misiniz?")) {
+    if (confirm("Are you sure you want to delete this reply?")) {
         comments[commentIndex].replies.splice(replyIndex, 1);
+        saveComments();
+        displayComments();
+    }
+}
+
+function replyToComment(commentIndex) {
+    const name = prompt('Enter your name:');
+    const reply = prompt('Enter your reply:');
+    if (name && reply) {
+        const currentDate = new Date().toLocaleDateString();
+        const newReply = { 
+            name, 
+            message: reply, 
+            date: currentDate, 
+            likes: 0, 
+            replies: [] 
+        };
+        comments[commentIndex].replies.push(newReply);
+        saveComments();
+        displayComments();
+    }
+}
+
+function replyToReply(commentIndex, replyIndex) {
+    const name = prompt('Enter your name:');
+    const reply = prompt('Enter your reply:');
+    if (name && reply) {
+        const currentDate = new Date().toLocaleDateString();
+        const newReply = { 
+            name, 
+            message: reply, 
+            date: currentDate, 
+            likes: 0 
+        };
+        comments[commentIndex].replies[replyIndex].replies.push(newReply);
         saveComments();
         displayComments();
     }
