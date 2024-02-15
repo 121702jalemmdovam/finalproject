@@ -14,12 +14,11 @@ function getproduct(){
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="textDiv">
         <h5><strong>NAME:</strong> ${item.name}</h5>
-        <p class="title"><strong>Author:</strong> ${item.title} Manat</p>
-        <p class="count"><strong>Count:</strong> ${item.count}</p>
-        <span><strong>Price:</strong> ${item.price} Manat</span>
+        <p class="title"><strong>Author:</strong> ${item.title} </p>
+        <span><strong>Price:</strong> ${item.price} </span>
         <div class="btnDiv">
         <button class="onebutton" onclick="removefromcart(${index})">Remove From Wishlist <i class="fa-solid fa-trash"></i></button> <br>
-        <button class="twobutton" onclick="addtobasket(${item.id})">Add to Basket <i class="fa-solid fa-basket-shopping"></button>
+        <button class="twobutton" onclick="addtobasket(${item.id})">Add to Basket <i class="fa-solid fa-cart-shopping"></i></button>
         </div>
         </div>
         </div>
@@ -29,6 +28,24 @@ function getproduct(){
     })
 }
 getproduct()
+function addtobasket(id) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const productItem = wishlist.find(item => item.id == id);
+    
+    if(productItem){
+        let cartItem = cart.find(item => item.id == id);
+        if(cartItem){
+            cartItem.count = (cartItem.count || 1) + 1;
+        } else {
+            cart.push({...productItem, count: 1});
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Product added to cart:', productItem.title);
+    } else {
+        console.error('The product was not found in the favorites list.');
+    }
+}
 function removefromcart(index) {
 let wishlist= JSON.parse(localStorage.getItem('wishlist'))||[]
 wishlist.splice(index,1)
@@ -50,12 +67,11 @@ function getproducttwo(){
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
         <div class="textDiv">
         <h5><strong>NAME:</strong> ${item.name}</h5>
-        <p class="title"><strong>Author:</strong> ${item.title} Manat</p>
-        <p class="count"><strong>Count:</strong> ${item.count}</p>
-        <span><strong>Price:</strong> ${item.price} Manat</span>
+        <p class="title"><strong>Author:</strong> ${item.title}</p>
+        <span><strong>Price:</strong> ${item.price} </span>
         <div class="btnDiv">
         <button class="onebutton" onclick="removefromcart2(${index})">Remove From Wishlist <i class="fa-solid fa-trash"></i></button> <br>
-        <button class="twobutton" onclick="addtobasket(${item.id})">Add to Basket </button>
+        <button class="twobutton" onclick="addtobasket(${item.id})">Add to Basket<i class="fa-solid fa-cart-shopping"></i> </button>
         </div>
         </div>
         </div>
@@ -88,9 +104,8 @@ function getproductthree(){
         <div class="textDiv">
         <div class="txt">
         <h5><strong>NAME:</strong> ${item.name}</h5>
-        <p class="title"><strong>Author:</strong> ${item.title} Manat</p>
-        <p class="count"><strong>Count:</strong> ${item.count}</p>
-        <span><strong>Price:</strong> ${item.price} Manat</span>
+        <p class="title"><strong>Author:</strong> ${item.title}</p>
+        <span><strong>Price:</strong> ${item.price} </span>
         </div>
         <div class="btnDiv">
         <button class="onebutton" onclick="removefromcart3(${index})">Remove From Wishlist  <i class="fa-solid fa-trash"></i></button> <br>
@@ -132,7 +147,9 @@ function getproducts(){
         <span>${item.price} Manat</span>
         </div>
         <div class="btnDiv">
-        <button class="onebutton" onclick="detailpage(${item.id})"><i class="fa-solid fa-eye"></i></button><br>
+        <button class="onebutton" onclick="addtobasket6(${item.id})"><i class="fa-solid fa-basket-shopping"></i></button>
+        <button class="twobutton" onclick="addtowishlist6(${item.id})"><i class="fa-solid fa-heart"></i></button>    
+        <a href="./detailpage.html"><button class="onebutton" onclick="detail6(${item.id})"><i class="fa-solid fa-eye"></i></button><br></a>
         </div>
         </div>
         `
@@ -141,3 +158,34 @@ function getproducts(){
     })
 }
 getproducts()
+function addtobasket6(id) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    let product = cart.find(item => item.id == id)
+
+    if(product) {
+        product.count = (product.count || 1) + 1
+    }
+    else {
+        cart.push({... products.find(item => item.id == id), count : 1})
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
+}
+function addtowishlist6(id){
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
+    let productItem = wishlist.find(item => item.id == id)
+    
+    if(productItem){
+        alert('This product has already become a favorite')
+    } else {
+        wishlist.push(products.find(item => item.id == id)) 
+        localStorage.setItem('wishlist',JSON.stringify(wishlist))
+    }
+
+}
+function detail6(id) {
+    localStorage.removeItem('cart');
+
+    const cart = [products.find(item => item.id == id)];
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+}

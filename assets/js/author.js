@@ -26,13 +26,10 @@ function getproduct(){
 }
 getproduct()
 function authordetail2(id) {
-    // Yeni ürünü sepete eklemek için önceki verileri temizle
     localStorage.removeItem('author');
 
-    // Yeni ürünü sepete ekle
     const author = [products.find(item => item.id == id)];
     
-    // Güncellenmiş sepet verilerini localStorage'a kaydet
     localStorage.setItem('author', JSON.stringify(author));
 }
 const filterdata = document.getElementById('filterdata')
@@ -45,18 +42,19 @@ function filterdatadefault(){
             products = res.data
             products.map(item=>{
                 const box = document.createElement('div')
-                box.innerHTML = `
-                <div class="proDiv">
-                <img src="${item.image}" alt="">
-                <div class="textDiv">
-                <h5>${item.name}</h5>
-                <p>${item.title}</p>
-                </div>
-                <div class="btnDiv">
-                <a href="./detailpage.html"><button onclick="authordetail(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
-                </div>
-                </div>
-                `
+                box.className='boxDiv col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12'
+        box.innerHTML=`
+        <div class="proDiv">
+        <img src="${item.image}" alt="">
+        <div class="textDiv">
+        <h5>${item.name}</h5>
+        <p>${item.title}</p>
+        </div>
+        <div class="btnDiv">
+        <a href="./authordetail.html"><button onclick="authordetail2(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+        </div>
+        `
                 author.appendChild(box)
             })
         })
@@ -73,18 +71,19 @@ function filterdataaz(){
             let azproducts = products.sort((a,b)=>a.name.localeCompare(b.name))
             azproducts.map(item=>{
                 const box = document.createElement('div')
-                box.innerHTML = `
-                <div class="proDiv">
-                <img src="${item.image}" alt="">
-                <div class="textDiv">
-                <h5>${item.name}</h5>
-                <p>${item.title}</p>
-                </div>
-                <div class="btnDiv">
-                <a href="./detailpage.html"><button onclick="authordetail(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
-                </div>
-                </div>
-                `
+        box.className='boxDiv col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12'
+        box.innerHTML=`
+        <div class="proDiv">
+        <img src="${item.image}" alt="">
+        <div class="textDiv">
+        <h5>${item.name}</h5>
+        <p>${item.title}</p>
+        </div>
+        <div class="btnDiv">
+        <a href="./authordetail.html"><button onclick="authordetail2(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+        </div>
+        `
                 author.appendChild(box)
             })
         })
@@ -102,7 +101,8 @@ function filterdataza(){
             let zaproducts = products.sort((a,b)=>b.name.localeCompare(a.name))
             zaproducts.map(item=>{
                 const box = document.createElement('div')
-                box.innerHTML = `
+                box.className='boxDiv col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12'
+                box.innerHTML=`
                 <div class="proDiv">
                 <img src="${item.image}" alt="">
                 <div class="textDiv">
@@ -110,7 +110,7 @@ function filterdataza(){
                 <p>${item.title}</p>
                 </div>
                 <div class="btnDiv">
-                <a href="./detailpage.html"><button onclick="authordetail(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
+                <a href="./authordetail.html"><button onclick="authordetail2(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
                 </div>
                 </div>
                 `
@@ -131,18 +131,19 @@ function searchbyname(e){
             let searchproducts = products.filter((item)=>item.name.toLowerCase().startsWith(searchinput.value.toLowerCase()));
             searchproducts.map(item=>{
                 const box = document.createElement('div')
-                box.innerHTML = `
-                <div class="proDiv">
-                <img src="${item.image}" alt="">
-                <div class="textDiv">
-                <h5>${item.name}</h5>
-                <p>${item.title}</p>
-                </div>
-                <div class="btnDiv">
-                <a href="./detailpage.html"><button onclick="authordetail(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
-                </div>
-                </div>
-                `
+                box.className='boxDiv col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12'
+        box.innerHTML=`
+        <div class="proDiv">
+        <img src="${item.image}" alt="">
+        <div class="textDiv">
+        <h5>${item.name}</h5>
+        <p>${item.title}</p>
+        </div>
+        <div class="btnDiv">
+        <a href="./authordetail.html"><button onclick="authordetail2(${item.id})">Read More <i class="fa-solid fa-arrow-right"></i></button></a>
+        </div>
+        </div>
+        `
                 author.appendChild(box)
             })
             searchinput.value = ''

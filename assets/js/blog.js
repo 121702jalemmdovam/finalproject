@@ -27,13 +27,10 @@ function getblog(){
 }
 getblog()
 function detail(id) {
-    // Yeni ürünü sepete eklemek için önceki verileri temizle
     localStorage.removeItem('cart');
 
-    // Yeni ürünü sepete ekle
     const cart = [products.find(item => item.id == id)];
     
-    // Güncellenmiş sepet verilerini localStorage'a kaydet
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
@@ -68,13 +65,10 @@ function getblog2(){
 }
 getblog2()
 function detail2(id) {
-    // Yeni ürünü sepete eklemek için önceki verileri temizle
     localStorage.removeItem('cart');
 
-    // Yeni ürünü sepete ekle
     const cart = [products.find(item => item.id == id)];
     
-    // Güncellenmiş sepet verilerini localStorage'a kaydet
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 

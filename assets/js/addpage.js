@@ -26,7 +26,7 @@ function searchbyname(e) {
                 box.className = 'myBox';
                 box.innerHTML = `
                     <td><img src="${item.image}" alt=""></td>
-                    <td><p>${item.title}</p></td>
+                    <td><p>${item.name}</p></td>
                     <td><p>${item.price}</p></td>
                     <td><button onclick="removefromadd(${item.id})">Remove</button></td>
                 `;
@@ -68,8 +68,8 @@ function getForm() {
             box.className = 'myBox col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12'
             box.innerHTML = `
             <td><img src="${item.image}" alt=""></td>
-            <td><p>${item.title}</p></td>
-            <td><p>$${item.price}</p></td>
+            <td><p>${item.name}</p></td>
+            <td><p>${item.price}</p></td>
             <td><button style="background-color: #007A5C; color: white; border: none; width: 60px; height: 30px; margin-right: 20px;" onclick="deleteFromForm(${item.id})">sil</button></td>
             `;
             tableDiv.appendChild(box)
@@ -95,14 +95,14 @@ function sortAZ() {
     axios.get('https://65680f199927836bd97406d3.mockapi.io/username/products')
     .then(res =>{
         db = res.data
-        const sortData = db.sort((a,b) => a.title.localeCompare(b.title))
+        const sortData = db.sort((a,b) => a.name.localeCompare(b.name))
         sortData.map(item =>{
             const box = document.createElement('tr')
             box.className = 'myBox col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12'
             box.innerHTML = `
             <td><img src="${item.image}" alt=""></td>
-            <td><p>${item.title}</p></td>
-            <td><p>$${item.price}</p></td>
+            <td><p>${item.name}</p></td>
+            <td><p>${item.price}</p></td>
             <td><button style="background-color: #007A5C; color: white; border: none; width: 60px; height: 30px; margin-right: 20px;" onclick="deleteFromForm(${item.id})">sil</button></td>
             `;
             tableDiv.appendChild(box)
@@ -118,15 +118,15 @@ function sortZA() {
     axios.get('https://65680f199927836bd97406d3.mockapi.io/username/products')
     .then(res =>{
         db = res.data
-        const sortData = db.sort((a,b) => b.title.localeCompare(a.title))
+        const sortData = db.sort((a,b) => b.name.localeCompare(a.name))
         sortData.map(item =>{
             const box = document.createElement('tr')
             box.className = 'myBox col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12'
             box.innerHTML = `
             <td><img src="${item.image}" alt=""></td>
-            <td><p>${item.title}</p></td>
-            <td><p>$${item.price}</p></td>
-            <td><button style="background-color: #007A5C; color: white; border: none; width: 60px; height: 30px; margin-right: 20px;" onclick="deleteFromForm(${item.id})">sil</button></td>
+            <td><p>${item.name}</p></td>
+            <td><p>${item.price}</p></td>
+            <td><button style="background-color:#; color: white; border: none; width: 60px; height: 30px; margin-right: 20px;" onclick="deleteFromForm(${item.id})">sil</button></td>
             `;
             tableDiv.appendChild(box)
         })

@@ -16,3 +16,4 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         document.getElementById("loginForm").reset();
     }
 });
+
